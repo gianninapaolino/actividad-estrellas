@@ -1,0 +1,11 @@
+En la actividad de la clase, vamos a consumir el siguiente json
+https://nataliasotelo.github.io/act-estrellas/estrellas.json
+
+Y con el mismo vamos a istar todos los usuarios de personas, debe contener:
+- nombre
+- compañia (a la que vamos a "ponerle" las entrellas)
+- cantidad de estrellas
+
+También, se debe mostrar un cuadro de texto para agregar un comentario y se debe poder seleccionar bajo que nombre de los listados anteriormente se dejará el comentario.
+La estetica queda a gusto de cada equipo- Recomiendo el uso de bootstrap para seguir practicandolo!
+

@@ -1,0 +1,19 @@
+    .rating {
+    direction: rtl;
+    font-size: 2rem;
+    display: inline-flex;
+    }
+    .rating input {
+    display: none;
+    }
+    .rating label {
+    color: #ccc;
+    cursor: pointer;
+    }
+    .rating input:checked ~ label {
+    color: #f5b301;
+    }
+    .rating label:hover,
+    .rating label:hover ~ label {
+    color: #f5b301;
+    }
