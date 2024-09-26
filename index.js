@@ -1,4 +1,6 @@
 const jsonUrl = 'https://nataliasotelo.github.io/act-estrellas/estrellas.json';
+const form = document.getElementById('rate-form');
+const arreglo = document.getElementById('userList');
 
 // Función para obtener datos del JSON
 function getJSONData(jsonUrl) {
@@ -42,3 +44,50 @@ function populateSelect(dataArray) {
     userSelect.appendChild(option); // Añadir la opción al <select>
   }
 }
+
+// Función para generar estrellas con Font Awesome
+function generarEstrellas(rate) {
+  let starsHtml = '';
+  for (let i = 0; i < rate; i++) {
+    starsHtml += '<i class="fas fa-star" style="color: #f5b301;"></i>'; // Agregar estrella dorada
+  }
+  return starsHtml;
+}
+
+// Capturar el evento de envío del formulario
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Evitamos el envío real del formulario
+
+  // Capturamos los valores ingresados por el usuario
+  const name = document.getElementById('name').value;
+  const company = document.getElementById('company').value;
+  const rating = parseInt(document.querySelector('input[name="rate"]:checked').value); // Obtener la calificación seleccionada
+
+  // Validar que el rating esté dentro del rango 1-5
+  if (!rating || rating < 1 || rating > 5) {
+    alert('Por favor ingrese una calificación válida.');
+    return;
+  }
+
+  // Crear un objeto simulando la nueva calificación
+  const newRating = {
+    name: name,
+    company: company,
+    numberrange: rating,
+  };
+
+  // Mostrar la nueva calificación junto con las anteriores
+  const stars = generarEstrellas(newRating.numberrange); // Generar estrellas con Font Awesome
+  userList.innerHTML += `<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title">${newRating.name} ${stars} </h5>
+    <h6 class="card-subtitle mb-2 text-muted"> ${newRating.company}</h6>
+  </div>
+</div>`; 
+  
+  
+
+
+  // Limpiar el formulario después del envío
+  form.reset();
+});
