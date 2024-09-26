@@ -8,6 +8,7 @@
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <!-- Font Awesome para los íconos de estrellas -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<link href="styles.css" rel="stylesheet">
 </head>
 <body class="container mt-5">
 
@@ -16,6 +17,47 @@
     <h1 class="mb-4">Listado de Personas</h1>
     <div id="userList" class="mb-4">
     </div>
+    <h2>Califica el producto</h2>
+    <br>
+    <form id="rate-form">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" required>
+        <br>
+        <label for="company">Empresa:</label>
+        <input type="text" id="company" required>
+        <br>
+        <br>
+        <!-- Estrellas para calificar -->
+        <div id="rating">
+            <input type="radio" id="star1" name="rate" value="5">
+            <label id="estrella1" for="star1" class="fas fa-star"></label>
+
+            <input type="radio" id="star2" name="rate" value="4">
+            <label id="estrella2" for="star2" class="fas fa-star"></label>
+
+            <input type="radio" id="star3" name="rate" value="3">
+            <label id="estrella3" for="star3" class="fas fa-star"></label>
+
+            <input type="radio" id="star4" name="rate" value="2">
+            <label id="estrella4" for="star4" class="fas fa-star"></label>
+
+            <input type="radio" id="star5" name="rate" value="1">
+            <label id="estrella5" for="star5" class="fas fa-star"></label>
+        </div>
+      
+       
+
+ 
+
+<br>
+<br>
+
+<div>
+            <button  type="submit" class="btn btn-primary">Enviar calificación</button>
+        </div>
+    </form>
+<br>
+<br>
 
     <h2>Agregar Comentario</h2>
     <form id="commentForm" class="mb-4">
